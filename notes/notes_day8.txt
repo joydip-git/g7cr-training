@@ -1,0 +1,26 @@
+component:
+	- building block
+	- contains view, code-behind, metadata
+
+a. nested
+b. routed
+
+pipe
+directive
+	a. component (@)
+	b. structural (*)
+	c. attribute (behavioral) ()
+service
+
+data binding
+	- code --> view
+		message --> {{ message }} [interpolation]
+	- view --> code
+		event binding
+
+
+controls		model
+-------------------------------------------
+button			chnageWidth()
+p 			message
+p.width			width
