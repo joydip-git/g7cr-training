@@ -1,0 +1,14 @@
+import {PipeTransform, Pipe} from '@angular/core'
+@Pipe({
+	name:'uppercase'
+})
+class UppercasePipe implements PipeTransform{
+
+   transform(arg:Contact[],...rest:string[]):any{
+	filterTexT = rest[0]
+	return 
+   }
+}
+
+//register this pipe
+@NgModule({declarations:[UppercasePipe]})

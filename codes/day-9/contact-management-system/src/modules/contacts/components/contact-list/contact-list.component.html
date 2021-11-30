@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="panel panel-body">
+        <app-contacts-search [searchText]="listFilterText" (searchTextChanged)="updateFilterText($event)">
+        </app-contacts-search>
+        <br />
+        <div class="table-responsive">
+            <table *ngIf="contacts && contacts.length>0;else alternate" class="table">
+                <thead>
+                    <tr>
+                        <td>Image</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Mobile</td>
+                        <td>Likes</td>
+                        <td>Delete</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of contacts|search:listFilterText">
+                        <!-- <tr *ngFor="let c of contacts"> -->
+                        <td>
+                            <img class="imgStyle" [src]="c.imagePath" alt="NA" title="{{c.name}}">
+                        </td>
+                        <td>{{c.name|uppercase}}</td>
+                        <td>{{c.email}}</td>
+                        <td>{{c.mobile}}</td>
+                        <!-- <td>{{c.likes}}</td> -->
+                        <td>
+                            <app-star [likesValue]='c.likes'>
+
+                            </app-star>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-template #alternate>
+                <div>No records found</div>
+            </ng-template>
+        </div>
+    </div>
+</div>
