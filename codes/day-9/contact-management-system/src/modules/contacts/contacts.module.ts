@@ -5,6 +5,7 @@ import { FilterContactsPipe } from './pipes/filter-contacts/filter-contacts.pipe
 import { FormsModule } from '@angular/forms';
 import { ContactsSearchComponent } from './components/contacts-search/contacts-search.component';
 import { StarComponent } from './components/star/star.component';
+import { ContactsService } from './services/contacts.service';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { StarComponent } from './components/star/star.component';
   imports: [
     CommonModule,
     FormsModule
-  ]
+  ],
+  providers: [ContactsService]
 })
 export class ContactsModule { }
