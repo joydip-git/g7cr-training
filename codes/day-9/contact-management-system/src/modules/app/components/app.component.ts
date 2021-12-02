@@ -11,5 +11,9 @@ export class AppComponent {
   changeTitle() {
     this.title = "welcome to anguar 13"
   }
+
+  constructor() {
+    console.log('app component created')
+  }
   //document.getElementByNames('p').addEventListener('click',this.changeTitle)
 }

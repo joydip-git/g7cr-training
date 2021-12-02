@@ -75,7 +75,7 @@ export const deleteContactHandler = (req, res) => {
     deleteContact(id)
         .then(
             (data) => {
-                console.log(data)
+                console.log('success')
                 res.status(200).json(createResponse(200, data))
             },
             (err) => {

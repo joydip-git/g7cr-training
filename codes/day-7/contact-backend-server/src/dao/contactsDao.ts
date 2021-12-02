@@ -13,7 +13,7 @@ export const readRecords = (): Promise<Contact[]> => {
 
                 if (data) {
                     const all = <Contact[]>JSON.parse(data.toString())
-                    console.log(all)
+                    //console.log(all)
                     resolveFn(all)
                 }
             })
@@ -25,6 +25,7 @@ export const readRecords = (): Promise<Contact[]> => {
 export const saveRecords = (contacts: Contact[]): Promise<string> => {
     const p = new Promise<string>(
         (resolveFn, rejectFn) => {
+            
             writeFile(
                 process.env.FILE_PATH,
                 JSON.stringify(contacts),

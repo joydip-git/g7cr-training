@@ -1,42 +1,20 @@
 [
     {
-        "name": "anil",
-        "id": 2,
-        "email": "anil@gmail.com",
-        "mobile": 9090909091,
-        "location": "Chennai",
-        "imagePath": ""
-    },
-    {
-        "name": "sunil",
+        "likes": 4,
         "id": 1,
-        "email": "sunil@gmail.com",
-        "mobile": 9090909091,
-        "location": "Bangalore",
-        "imagePath": ""
+        "name": "anil",
+        "email": "anil@gmail.com",
+        "mobile": 9090909090,
+        "location": "bangalore",
+        "imagePath": "https://st.depositphotos.com/1269204/1219/i/600/depositphotos_12196477-stock-photo-smiling-men-isolated-on-the.jpg"
     },
     {
+        "likes": 3.5,
+        "id": 2,
         "name": "sunil",
-        "id": 4,
         "email": "sunil@gmail.com",
         "mobile": 9090909091,
-        "location": "Bangalore",
-        "imagePath": ""
-    },
-    {
-        "name": "sunil",
-        "id": 5,
-        "email": "sunil@gmail.com",
-        "mobile": 9090909091,
-        "location": "Bangalore",
-        "imagePath": ""
-    },
-    {
-        "name": "sunil",
-        "id": "7",
-        "email": "sunil@gmail.com",
-        "mobile": 9090909091,
-        "location": "Bangalore",
-        "imagePath": ""
+        "location": "chennai",
+        "imagePath": "https://cdn.pixabay.com/photo/2014/07/09/10/04/man-388104_960_720.jpg"
     }
 ]

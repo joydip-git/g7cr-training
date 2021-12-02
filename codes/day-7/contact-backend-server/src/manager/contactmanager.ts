@@ -1,14 +1,10 @@
 import { readRecords, saveRecords } from "../dao/contactsDao"
 import { Contact } from "../models/contact"
 
-export const fetchContacts = async (): Promise<Contact[]> => {
+export const fetchContacts = async (): Promise<Contact[] | string> => {
     console.log('fetch called')
     const all = await readRecords()
-    if (all.length === 0) {
-        return Promise.reject('no records found')
-    } else {
-        return all
-    }
+    return all.length > 0 ? all : 'no records'
 }
 
 export const addContact = async (contactData: Contact): Promise<string> => {
@@ -60,7 +56,7 @@ export const deleteContact = async (id: number) => {
     const all = await readRecords()
     const index = all.findIndex(c => c.id === id)
     if (index === -1) {
-        return Promise.reject('record not found')
+        throw new Error('record not found')
     } else {
         all.splice(index, 1)
         return saveRecords(all)

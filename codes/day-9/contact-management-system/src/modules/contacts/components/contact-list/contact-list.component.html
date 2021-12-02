@@ -19,7 +19,9 @@
                     <tr *ngFor="let c of contacts|search:listFilterText">
                         <!-- <tr *ngFor="let c of contacts"> -->
                         <td>
-                            <img class="imgStyle" [src]="c.imagePath" alt="NA" title="{{c.name}}">
+                            <a [routerLink]="['/contacts/view',c.id]">
+                                <img class="imgStyle" [src]="c.imagePath" alt="NA" title="{{c.name}}">
+                            </a>
                         </td>
                         <td>{{c.name|uppercase}}</td>
                         <td>{{c.email}}</td>
@@ -31,7 +33,7 @@
                             </app-star>
                         </td>
                         <td>
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" (click)="deleteContact(c.id)">
                                 Delete
                             </button>
                         </td>

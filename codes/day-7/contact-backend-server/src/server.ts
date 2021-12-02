@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv'
 import routerMiddleware from './routes/apiroutes'
 import { serve, setup } from 'swagger-ui-express'
 import swaggerJSDoc = require('swagger-jsdoc')
+import * as cors from 'cors'
 
 const defs = {
     swaggerDefinition: {
@@ -39,9 +40,11 @@ const app = express()
 
 //creating json parser middleware
 const jsonParserMiddleware = express.json()
+const corsMiddleware = cors({ origin: '*', methods: '*' })
 
 //registering middleware with the express middleware pipeline
 app.use('/apidocs', serve, setup(obj))
+app.use(corsMiddleware)
 app.use(jsonParserMiddleware)
 app.use(routerMiddleware)
 

@@ -1,4 +1,5 @@
 export interface Contact {
+    likes: number;
     name: string;
     id: number;
     email: string;
