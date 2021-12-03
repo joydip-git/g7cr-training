@@ -14,7 +14,7 @@ export class ContactListComponent implements OnInit, OnDestroy {
   listFilterText = ''
   errorMessage?: string;
 
-  constructor(private contactSvc: AppService<Contact, ResponseMessage, number>) {
+  constructor(private contactSvc: AppService<Contact, ResponseMessage>) {
     console.log('ContactList component created')
   }
 
@@ -47,7 +47,7 @@ export class ContactListComponent implements OnInit, OnDestroy {
   }
 
   deleteContact(id: number) {
-    this.contactSvc.remove(id)?.subscribe(
+    this.contactSvc.remove<number>(id)?.subscribe(
       (resp: ResponseMessage) => {
         if (resp.code === 200) {
           alert(<string>resp.data)

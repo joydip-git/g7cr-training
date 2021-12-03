@@ -14,7 +14,7 @@ export class ViewContactComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private currentRoute: ActivatedRoute,
-    private contactSvc: AppService<Contact, ResponseMessage, number>) {
+    private contactSvc: AppService<Contact, ResponseMessage>) {
     console.log('ViewContact component created')
   }
 
@@ -28,7 +28,7 @@ export class ViewContactComponent implements OnInit, OnDestroy {
     const allParams: Params = currentRouteSnapshot.params;
     const id = Number(allParams['id'])
 
-    this.contactSvc.get(id)?.subscribe(
+    this.contactSvc.get<number>(id)?.subscribe(
       (resp: ResponseMessage) => {
         if (resp.code === 200) {
           this.contactInfo = <Contact>resp.data
