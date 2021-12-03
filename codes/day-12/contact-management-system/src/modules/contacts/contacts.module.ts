@@ -1,12 +1,11 @@
-import { NgModule, OnDestroy } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { FilterContactsPipe } from './pipes/filter-contacts/filter-contacts.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactsSearchComponent } from './components/contacts-search/contacts-search.component';
 import { StarComponent } from './components/star/star.component';
 import { ContactsService } from './services/contacts.service';
-// import { HttpClientModule } from '@angular/common/http';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { ViewContactComponent } from './components/view-contact/view-contact.component';
 import { UpdateContactComponent } from './components/update-contact/update-contact.component';
@@ -29,6 +28,7 @@ import { environment } from 'src/environments/environment';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ContactsRoutingModule
   ],
   //providers: [ContactsService]

@@ -9,6 +9,11 @@ export const fetchContacts = async (): Promise<Contact[] | string> => {
 
 export const addContact = async (contactData: Contact): Promise<string> => {
     const all = await readRecords()
+
+    if (!contactData.id || contactData.id === 0) {
+        const newId = all[all.length - 1].id + 1
+        contactData['id'] = newId
+    }
     if (all.find(c => c.id === contactData.id)) {
         return 'record exists'
     } else {

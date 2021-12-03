@@ -20,7 +20,7 @@ export const addContactHandler = (req, res) => {
     addContact(contactData)
         .then(
             (successMessage) => {
-                res.status(200).json(createResponse(201, successMessage))
+                res.status(201).json(createResponse(201, successMessage))
             },
             (reason) => {
                 res.status(500).json(createResponse(500, null, reason))

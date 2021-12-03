@@ -10,7 +10,7 @@ routerMiddleware.get('/contact/:id', getContactByIdHandler)
 routerMiddleware.get('/searchcontacts', fetchContactsByNameHandler)
 
 routerMiddleware.post('/contact/add', addContactHandler)
-routerMiddleware.patch('/update/:id', updateContactHandler)
+routerMiddleware.patch('/contact/update/:id', updateContactHandler)
 
 routerMiddleware.delete('/contact/delete/:id', deleteContactHandler)
 

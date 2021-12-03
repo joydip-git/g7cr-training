@@ -22,7 +22,11 @@
                                 <img class="imgStyle" [src]="c.imagePath" alt="NA" title="{{c.name}}">
                             </a>
                         </td>
-                        <td>{{c.name|uppercase}}</td>
+                        <td>
+                            <a [routerLink]="['/contacts/update',c.id]">
+                                <span>{{c.name|uppercase}}</span>
+                            </a>
+                        </td>
                         <td>{{c.email}}</td>
                         <td>{{c.mobile}}</td>
                         <td>
