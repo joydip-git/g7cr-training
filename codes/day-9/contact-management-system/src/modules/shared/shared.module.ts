@@ -19,11 +19,8 @@ import { SharedRouteModule } from './shared-routes.module';
   ],
   exports: [DashboardComponent]
 })
-export class SharedModule implements OnDestroy {
+export class SharedModule {
   constructor() {
     console.log('shared module created')
-  }
-  ngOnDestroy(): void {
-    console.log('shared module destroyed')
   }
 }

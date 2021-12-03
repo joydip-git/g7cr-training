@@ -1,14 +1,12 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Contact } from '../../models/contact.model';
 import { ResponseMessage } from '../../models/responsemessage.model';
-import { ContactsService } from '../../services/contacts.service';
-import { Observable, Subscription } from "rxjs";
+import { Observable } from "rxjs";
 import { AppService } from 'src/modules/shared/models/service.model';
 
 @Component({
   templateUrl: './contact-list.component.html',
-  styleUrls: ['./contact-list.component.css'],
-  //providers: [ContactsService]
+  styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit, OnDestroy {
 
@@ -16,17 +14,9 @@ export class ContactListComponent implements OnInit, OnDestroy {
   listFilterText = ''
   errorMessage?: string;
 
-  // constructor(@Inject('CONTACT_SERVICE') private contactSvc: IAppService<Contact, ResponseMessage, number>) {
-
-  // }
-
   constructor(private contactSvc: AppService<Contact, ResponseMessage, number>) {
     console.log('ContactList component created')
   }
-
-  // constructor(private contactSvc: ContactsService) {
-  //   console.log('ContactList component created')
-  // }
 
   ngOnDestroy(): void {
     console.log('ContactList component destroyed')
@@ -61,7 +51,6 @@ export class ContactListComponent implements OnInit, OnDestroy {
       (resp: ResponseMessage) => {
         if (resp.code === 200) {
           alert(<string>resp.data)
-          //reload the data from server and display in the view
           this.getData()
         } else
           alert(resp.errormessage)
@@ -71,11 +60,4 @@ export class ContactListComponent implements OnInit, OnDestroy {
   updateFilterText(filterTextData: string) {
     this.listFilterText = filterTextData
   }
-
-  // changeFilterText(newFilterText:any) {
-  //   //console.log(newFTxtx)
-  //   // this.filterText = newFilterText
-  //   console.log(newFilterText)
-  // }
-
 }

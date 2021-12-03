@@ -1,0 +1,13 @@
+Router: service (engine)
+
+	a. define routes
+		--> Route
+	b. collection of routes:
+		--> Routes
+	c. register you routes
+		--> module
+		i. separate routing module
+		ii. register this module with actual module of that feature folder
+
+	RouterState: Tree<ActivatedRoute>
+

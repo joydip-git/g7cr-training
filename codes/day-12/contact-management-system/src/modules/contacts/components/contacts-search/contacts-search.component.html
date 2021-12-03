@@ -1,0 +1,11 @@
+<div class="row" style="width:300px ">
+    <div class="col-md-2" style="float: left;">
+        Filter By:&nbsp;
+    </div>
+    <div class="col-md-4" style="float: right;">
+        <input type="text" [value]="filterText" (keyup)="onfilterTextChanged(ftxt.value)" #ftxt>
+        <!-- <input type="text" (keyup)="changeFilterText(ftxt)" ngModel #ftxt="ngModel"> -->
+
+        <!-- <input type="text" [(ngModel)]="filterText"> -->
+    </div>
+</div>

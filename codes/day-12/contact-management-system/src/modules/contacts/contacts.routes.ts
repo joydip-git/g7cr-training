@@ -6,19 +6,19 @@ import { ViewContactComponent } from "./components/view-contact/view-contact.com
 
 export const contactRoutes: Routes = [
     {
-        path: 'contacts',
+        path: '',
         component: ContactListComponent
     },
     {
-        path: 'contacts/add',
+        path: 'add',
         component: AddContactComponent
     },
     {
-        path: 'contacts/view/:id',
+        path: 'view/:id',
         component: ViewContactComponent
     },
     {
-        path: 'contacts/update/:id',
+        path: 'update/:id',
         component: UpdateContactComponent
     }
 ]
