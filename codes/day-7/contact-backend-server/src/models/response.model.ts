@@ -1,4 +1,4 @@
-export interface ResponseGenerator {
+export interface ResponseModel {
     code: number;
     data?: any;
     errormessage?: string;

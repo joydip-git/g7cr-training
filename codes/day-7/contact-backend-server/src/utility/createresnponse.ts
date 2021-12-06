@@ -1,6 +1,6 @@
-import { ResponseGenerator } from "../models/responsegenerator"
+import { ResponseModel } from "../models/response.model"
 
-export const createResponse = (code: number, data?: any, err?: string): ResponseGenerator => {
+export const createResponse = (code: number, data?: any, err?: string): ResponseModel => {
     return {
         code: code,
         data: data,

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default">
+    <div class="btn btn-group" routerLink='/home'>
+        Home
+    </div>
+    <div class="btn btn-group" routerLink='/contacts'>
+        Contacts
+    </div>
+    <div class="btn btn-group" routerLink='/login' *ngIf="!authService.isLoggedIn()">
+        Login
+    </div>
+    <div class="btn btn-group" *ngIf="!!authService.isLoggedIn()" (click)='logout()'>
+        Logout
+    </div>
+</nav>

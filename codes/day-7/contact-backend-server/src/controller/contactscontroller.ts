@@ -82,4 +82,8 @@ export const deleteContactHandler = (req, res) => {
                 res.status(500).json(createResponse(500, null, err))
             }
         )
+    // .catch(err => {
+    //     res.status(500).json(createResponse(500, null, err))
+    // })
+
 }

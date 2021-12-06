@@ -1,0 +1,40 @@
+<!-- <form class="form" ngForm #frm="ngForm" (submit)='submitData(frm.value)'> -->
+<form class="form" ngForm #frm="ngForm" (submit)='submitData()' *ngIf='contactInfo'>
+    <div class="form-group">
+        <label for="name">Name:&nbsp;</label>
+        <div class="form-control">
+            <input type="text" name="name" id="name" [(ngModel)]='contactInfo.name' required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:&nbsp;</label>
+        <div class="form-control">
+            <input type="email" name="email" id="email" [(ngModel)]='contactInfo.email' required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="mobile">Mobile:&nbsp;</label>
+        <div class="form-control">
+            <input type="number" name="mobile" id="mobile" [(ngModel)]='contactInfo.mobile' required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="location">Location:&nbsp;</label>
+        <div class="form-control">
+            <input type="text" name="location" id="location" [(ngModel)]='contactInfo.location' required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="imagePath">Image:&nbsp;</label>
+        <div class="form-control">
+            <input type="text" name="imagePath" id="imagePath" [(ngModel)]='contactInfo.imagePath' required>
+        </div>
+    </div>
+
+    <!-- <input type="submit" value="Add Contact" class="btn btn-primary" (click)='submitData(frm)' [disabled]="!frm.valid"> -->
+    <input type="submit" value="Add Contact" class="btn btn-primary" [disabled]="!frm.valid">
+</form>

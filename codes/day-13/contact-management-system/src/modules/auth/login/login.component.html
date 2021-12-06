@@ -1,0 +1,39 @@
+<div>
+    <form #loginForm="ngForm" (submit)="login(loginForm)">
+        <div class="form-group">
+            <label for="email">
+                Email:&nbsp;
+            </label>
+            <div class="form-control">
+                <input type="email" name='email' [(ngModel)]='email' placeholder="enter email as user name" required
+                    email>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">
+                Email:&nbsp;
+            </label>
+            <div class="form-control">
+                <input type="password" name='password' [(ngModel)]='password' placeholder="enter password" required
+                    minlength="6">
+            </div>
+        </div>
+
+        <div class="form-group" *ngIf='!loginMode'>
+            <label for="mobile">
+                Mobile:&nbsp;
+            </label>
+            <div class="form-control">
+                <input type="number" name='mobile' [(ngModel)]='mobile' placeholder="enter mobile no" required
+                    minlength="10">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-submit">
+            {{ loginMode?'Login':'Register'}}
+        </button>|
+        <button type="button" class="btn btn-primary" (click)='changeMode()'>
+            Switch to {{ loginMode?'Registration':'Login'}}
+        </button>
+    </form>
+</div>

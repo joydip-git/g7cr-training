@@ -1,0 +1,12 @@
+/* table > tbody > tr > td > img {
+  margin: 2px;
+  width: 50px;
+} */
+
+.imgStyle {
+  margin: 2px;
+  width: 60px;
+}
+table > thead {
+    background-color: burlywood;
+}
