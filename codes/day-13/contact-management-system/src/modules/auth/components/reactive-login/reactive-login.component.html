@@ -1,0 +1,55 @@
+<div *ngIf="loginFrm">
+    <form [formGroup]="loginFrm" (ngSubmit)="login()">
+        <div class="form-group">
+            <label for="email">
+                Email:&nbsp;
+            </label>
+            <div class="form-control">
+                <input type="email" name='email' placeholder="enter email as user name" formControlName='email'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">
+                Password:&nbsp;
+            </label>
+            <div class="form-control">
+                <input type="password" name='password' placeholder="enter password" formControlName='password'>
+            </div>
+        </div>
+
+        <!-- <div class="form-group" *ngIf='!loginMode'>
+            <label for="mobile">
+                Mobile:&nbsp;
+            </label>
+            <div class="form-control">
+                <input type="number" name='mobile' [(ngModel)]='mobile' placeholder="enter mobile no" required
+                    minlength="10">
+            </div>
+        </div> -->
+
+        <button type="submit" class="btn btn-submit" [disabled]="!loginFrm.valid">
+            {{ loginMode?'Login':'Register'}}
+        </button>|
+        <button type="button" class="btn btn-primary" (click)='changeMode()'>
+            Switch to {{ loginMode?'Registration':'Login'}}
+        </button>
+    </form>
+</div>
+
+<div *ngIf='email?.errors && (email?.touched || email?.dirty)'>
+    <div *ngIf="email?.errors?.['required']">
+        Email required
+    </div>
+    <div *ngIf="email?.errors?.['email']">
+        Email format
+    </div>
+</div>
+
+<div *ngIf='password?.errors && (password?.touched || password?.dirty)'>
+    <div *ngIf="password?.errors?.['required']">
+        password required
+    </div>
+    <div *ngIf="password?.errors?.['passwordError']">
+        {{ password?.errors?.['passwordError'] }}
+    </div>
+</div>
