@@ -1,20 +1,30 @@
-// import { AbstractControl, AsyncValidatorFn, FormControl, ValidationErrors, ValidatorFn } from "@angular/forms";
-// //import { from, Observable, of } from "rxjs";
+import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
-// export const passwordValidator = (): ValidatorFn => {
-//     FormControl
-//     const validatorLoginFn = (control: AbstractControl): ValidationErrors | null => {
-//         console.log('in pwd validator')
-//         const password = <string>control.value
-//         const res = password.length > 6 && password.length < 12
-//         if (!res) {
-//             const error = { 'passwordError': 'length should be between 6 and 12' }
-//             console.log(error)
-//             console.log(control)
-//             return error
-//         } else {
-//             return null
-//         }
-//     }
-//     return validatorLoginFn;
-// }
+export const customPasswordValidatorFactory = (): ValidatorFn => {
+
+    const customPasswordValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+        const password = control.value
+        if (!(password.length >= 6 && password.length <= 16)) {
+            // return { 'passwordError': `length should be between 6 and 16, current length is ${password.length}` }
+            return { 'passwordLengthError': true }
+        }
+
+        let hasUppercase = false
+        for (let index = 0; index < password.length; index++) {
+            const char = password[index];
+            if (char >= 'A' && char <= 'Z') {
+                hasUppercase = true
+                break
+            }
+        }
+
+        if (!hasUppercase)
+            // return { 'passwordError': `at least one uppercase shoud be present` }
+            return { 'passwordUppercaseError': true }
+
+
+        return null
+    }
+
+    return customPasswordValidatorFn
+}

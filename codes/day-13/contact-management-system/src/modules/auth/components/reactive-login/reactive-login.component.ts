@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { customPasswordValidatorFactory } from '../../validators/passwordvalidator';
 
 @Component({
     selector: 'app-reactive-login',
@@ -24,7 +25,7 @@ export class ReactiveLoginComponent implements OnInit {
 
         this.emailControl = new FormControl('', [Validators.required, Validators.email])
 
-        this.passwordControl = new FormControl('', [Validators.required, Validators.minLength(6)])
+        this.passwordControl = new FormControl('', [Validators.required, customPasswordValidatorFactory()])
 
         this.loginForm = new FormGroup({
             'email': this.emailControl,

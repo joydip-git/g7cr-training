@@ -25,18 +25,30 @@
             </label>
             <div class="form-control">
                 <input type="password" name='password' #pwd='ngModel' ngModel placeholder="enter password" required
-                    minlength="6">
+                    appCustomPasswordValidator>
             </div>
         </div>
 
 
-        <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)">
+        <!-- <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)">
             <div *ngIf="pwd.errors && pwd.errors['required']">
                 password needs to be entered
             </div>
             <div *ngIf="pwd.errors && pwd.errors['minlength']">
                 password must have at least {{pwd.errors['minlength'].requiredLength}} characteres, you entered just
                 {{pwd.errors['minlength'].actualLength}} character
+            </div>
+        </div> -->
+
+        <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)">
+            <div *ngIf="pwd.errors && pwd.errors['required']">
+                password needs to be entered
+            </div>
+            <div *ngIf="pwd.errors && pwd.errors?.['passwordLengthError']">
+                password length should be between 6 and 16, whereas current length is {{pwd.value.length}}
+            </div>
+            <div *ngIf="pwd.errors && pwd.errors?.['passwordUppercaseError']">
+                password must have at least one upper case
             </div>
         </div>
         <!-- <div class="form-group" *ngIf='!loginMode'>

@@ -1,0 +1,116 @@
+	
+
+	<input formControlName='pasword'/>
+	<div>
+		{{password.errors['minLength']'.actualLength
+	</div>
+
+	let minLengthValidatorFn = Validators.minLength(6)
+	'password': new FormControl('', [Validators.required, minLengthValidatorFn ])
+
+	password.errors={ 'minLength':{ 
+						actualLength:control.value.length,
+						requiredLength:minlen
+					} 
+				}
+
+	password.errors={required:true}
+	interface ValidationErrors{ [key:string]:any}
+
+        type ValidatorFn = (control:AbstractControl) => ValidationErrors|null
+
+	function xValidator(control:AbstractControl):ValidationErrors|null{
+	}
+
+	function minLength(minlen:number):ValidatorFn {
+
+		const someValidator= (control:AbstractControl):ValidationErrors|null=>{
+
+			if(control.value.length>=minlen){
+				
+				return null;
+			}else{
+				const obj:ValidationErrors = { 
+					'minLength':{ 
+						actualLength:control.value.length,
+						requiredLength:minlen
+					} 
+				}
+			return obj;
+			}
+		}
+		return someValidator;
+	}
+
+
+
+	function resize(option){
+	        const l = 10
+		const b = 20
+		const fnResize=Function|undefined
+			switch(option){
+
+				case 1: fnResize= ()=>{ }
+				break;
+
+
+				case 2: fnResize=()=>{}
+				break;
+			}
+
+		return fnResize;
+	}
+
+	const btnResize = resize(1)
+        btnResize()
+
+	[[Scope]]=[x,y,[l,b]]
+
+
+	function logger(){
+		return {
+
+			isInterceptable:function(){
+				return 
+			},
+			intercept:function(req,res,next){
+				next()
+			}
+		}
+		
+	}
+
+        app.use(logger())
+
+
+	Parent:
+	design:
+	<app-c1>
+		<app-c2 [name]='data'></app-c2>
+	</app-c1>
+
+	code:
+	@Component({ selector:'app-c1'})
+	class App1Component{
+		data='joydip'
+	}
+
+
+	child:
+
+	design:
+	<span>{{ c2prop }}</span>
+	code:
+	@Component({ selector:'app-c2'})
+	class App2Component{
+
+		@Input('name') c2prop:string=''
+	}
+
+
+
+
+
+
+
+

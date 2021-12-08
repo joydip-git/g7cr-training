@@ -32,10 +32,16 @@
             <div *ngIf="pwdlCtrl?.errors && pwdlCtrl?.errors?.['required']">
                 password needs to be entered
             </div>
-            <div *ngIf="pwdlCtrl?.errors && pwdlCtrl?.errors?.['minlength']">
+            <!-- <div *ngIf="pwdlCtrl?.errors && pwdlCtrl?.errors?.['minlength']">
                 password must have at least {{pwdlCtrl?.errors?.['minlength'].requiredLength}} characteres, you entered
                 just
                 {{pwdlCtrl?.errors?.['minlength'].actualLength}} character
+            </div> -->
+            <div *ngIf="pwdlCtrl?.errors && pwdlCtrl?.errors?.['passwordLengthError']">
+                password length should be between 6 and 16, whereas current length is {{pwdlCtrl?.value.length}}
+            </div>
+            <div *ngIf="pwdlCtrl?.errors && pwdlCtrl?.errors?.['passwordUppercaseError']">
+                password must have at least one upper case
             </div>
         </div>
         <!-- <div class="form-group" *ngIf='!loginMode'>
