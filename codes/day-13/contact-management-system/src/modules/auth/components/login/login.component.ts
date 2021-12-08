@@ -10,9 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  email = '';
-  password = '';
-  mobile = 0
+  //mobile = 0
   loginMode = true
 
   private returnUrl?: string;
