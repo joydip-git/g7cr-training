@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Params, Router } from '@angular/router';
-import { AppService } from 'src/modules/shared/models/service.model';
+import { AppService } from 'src/app/modules/shared/models/service.model';
+
 import { Contact } from '../../models/contact.model';
 import { ResponseMessage } from '../../models/responsemessage.model';
 

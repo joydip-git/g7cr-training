@@ -11,9 +11,9 @@ import { ViewContactComponent } from './components/view-contact/view-contact.com
 import { UpdateContactComponent } from './components/update-contact/update-contact.component';
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { AppService } from '../shared/models/service.model';
-import { environment } from 'src/environments/environment';
 import { ContactsMainComponent } from './components/contacts-main/contacts-main.component';
 import { FriendsCartComponent } from './components/friends-cart/friends-cart.component';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({

@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Contact } from '../../models/contact.model';
 import { ResponseMessage } from '../../models/responsemessage.model';
-import { Observable } from "rxjs";
-import { AppService } from 'src/modules/shared/models/service.model';
+import { Observable } from "rxjs";import { AppService } from 'src/app/modules/shared/models/service.model';
+;
 
 @Component({
   templateUrl: './contact-list.component.html',

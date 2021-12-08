@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { ResponseMessage } from 'src/modules/contacts/models/responsemessage.model';
+import { ResponseMessage } from '../../contacts/models/responsemessage.model';
+
 
 @Injectable()
 export class AuthService {

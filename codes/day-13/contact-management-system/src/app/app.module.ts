@@ -2,13 +2,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
-import { AuthGuard } from '../auth/services/auth.guard';
-import { AuthService } from '../auth/services/auth.service';
-import { JwtInterceptorService } from '../auth/services/jwt-interceptor.service';
-import { DashboardComponent } from '../shared/components/dashboard/dashboard.component';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './components/app.component';
+import { AuthGuard } from './modules/auth/services/auth.guard';
+import { AuthService } from './modules/auth/services/auth.service';
+import { JwtInterceptorService } from './modules/auth/services/jwt-interceptor.service';
+import { DashboardComponent } from './modules/shared/components/dashboard/dashboard.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -19,7 +21,13 @@ import { AppComponent } from './components/app.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   bootstrap: [AppComponent],
   providers: [

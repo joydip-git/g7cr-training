@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http'
 import { Inject, Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
 import { ResponseMessage } from "../models/responsemessage.model";
-import { AppService } from 'src/modules/shared/models/service.model';
+
 import { Contact } from '../models/contact.model';
+import { AppService } from '../../shared/models/service.model';
 
 @Injectable()
 export class ContactsService implements AppService<Contact, ResponseMessage>{
