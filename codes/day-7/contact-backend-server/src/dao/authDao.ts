@@ -1,5 +1,5 @@
 import { readFile, writeFile } from "fs"
-import { User } from "../models/user"
+import { User } from "../models/user.model"
 
 // const FILE_PATH = process.env.FILE_PATH
 

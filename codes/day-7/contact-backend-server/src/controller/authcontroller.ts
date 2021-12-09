@@ -1,10 +1,11 @@
 import { addUser, checkUser } from "../manager/authmanager"
 import { createToken } from "../middleware/authmiddleware"
-import { User } from "../models/user"
+import { User } from "../models/user.model"
 import { createResponse } from "../utility/createresnponse"
 
 export const registerUserHandler = (req, res) => {
     const user = <User>req.body
+    console.log(user)
     if (user.email && user.email !== '' && user.password && user.password !== '') {
         addUser(user).then(
             (resp) => {

@@ -4,6 +4,7 @@ import routerMiddleware from './routes/apiroutes'
 import { serve, setup } from 'swagger-ui-express'
 import swaggerJSDoc = require('swagger-jsdoc')
 import * as cors from 'cors'
+import { connectDb } from './db/db'
 
 const defs = {
     swaggerDefinition: {
@@ -34,6 +35,9 @@ const obj = swaggerJSDoc(defs)
 
 dotenv.config()
 const PORT = process.env.PORT
+const MONGO_URL = process.env.MONGO_URL
+
+connectDb(MONGO_URL)
 
 //creating express server
 const app = express()

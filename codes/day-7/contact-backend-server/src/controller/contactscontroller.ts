@@ -1,5 +1,5 @@
 import { addContact, deleteContact, fetchContactById, fetchContacts, fetchContactsByName, updateContact } from "../manager/contactmanager"
-import { Contact } from "../models/contact"
+import { Contact } from "../models/contact.model"
 import { createResponse } from "../utility/createresnponse"
 
 export const getAllContactsHandler = (req, res) => {

@@ -4,13 +4,12 @@ import { HomeComponent } from "./modules/shared/components/home/home.component";
 import { PageNotFoundComponent } from "./modules/shared/components/page-not-found/page-not-found.component";
 export const appRoutes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: HomeComponent
     },
     {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
+        path: 'home',
+        component: HomeComponent
     },
     {
         path: 'login',

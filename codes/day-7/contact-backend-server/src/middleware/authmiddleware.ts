@@ -1,10 +1,10 @@
-import { User } from "../models/user"
+import { User } from "../models/user.model"
 import * as jwt from 'jsonwebtoken'
 import { createResponse } from "../utility/createresnponse"
 
 export const createToken = (user: User) => {
     const payload = { subject: user.email }
-    const token = jwt.sign(payload, 'secret key', { algorithm: 'HS512', expiresIn: 300 })
+    const token = jwt.sign(payload, 'secret key', { algorithm: 'HS512', expiresIn: 6000 })
     return token;
 }
 

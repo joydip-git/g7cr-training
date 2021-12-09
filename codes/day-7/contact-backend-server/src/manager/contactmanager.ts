@@ -1,5 +1,5 @@
 import { readRecords, saveRecords } from "../dao/contactsDao"
-import { Contact } from "../models/contact"
+import { Contact } from "../models/contact.model"
 
 export const fetchContacts = async (): Promise<Contact[] | string> => {
     console.log('fetch called')
